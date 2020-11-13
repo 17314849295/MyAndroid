@@ -8,7 +8,7 @@ import com.ironsource.mediationsdk.sdk.InterstitialListener
 import com.ironsource.mediationsdk.sdk.RewardedVideoListener
 import java.util.*
 
-class IronSourceManager : RewardedVideoListener, InterstitialListener {
+class IronSourceManager private constructor() : RewardedVideoListener, InterstitialListener {
 
     private var showRewardedVideo = false
     private var showInterstitial = true
@@ -21,6 +21,14 @@ class IronSourceManager : RewardedVideoListener, InterstitialListener {
     inner class Listener {
         internal var onLoading: (() -> Unit)? = null
         internal var onShow: (() -> Unit)? = null
+    }
+
+    companion object {
+        private var instance: IronSourceManager? = null
+        fun getInstance(): IronSourceManager =
+            instance ?: synchronized(this) {
+                instance ?: IronSourceManager().also { instance = it }
+            }
     }
 
     fun init(activity: Activity, appKey: String, vararg adUnits: IronSource.AD_UNIT) {
