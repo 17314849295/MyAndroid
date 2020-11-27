@@ -19,8 +19,16 @@ class IronSourceManager private constructor() : RewardedVideoListener, Interstit
     private lateinit var mListener: Listener
 
     inner class Listener {
-        internal var onLoading: (() -> Unit)? = null
-        internal var onShow: (() -> Unit)? = null
+        var onLoading: (() -> Unit)? = null
+        var onShow: (() -> Unit)? = null
+
+        fun onLoading(operation: () -> Unit) {
+            onLoading = operation
+        }
+
+        fun onShow(operation: () -> Unit) {
+            onShow = operation
+        }
     }
 
     companion object {

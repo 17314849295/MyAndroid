@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="VideoRangeSlider">
+        <attr name="cursorColor" format="color|reference" />
+        <attr name="cursorWidth" format="dimension" />
+        <attr name="strokeColor" format="color|reference" />
+        <attr name="strokeWidth" format="dimension" />
+        <attr name="touchRange" format="dimension" />
+    </declare-styleable>
+</resources>
