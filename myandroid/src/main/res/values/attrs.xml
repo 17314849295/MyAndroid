@@ -6,5 +6,8 @@
         <attr name="strokeColor" format="color|reference" />
         <attr name="strokeWidth" format="dimension" />
         <attr name="touchRange" format="dimension" />
+        <attr name="frameCount" format="integer" />
+        <attr name="previewHeight" format="dimension" />
+        <attr name="previewMarginTop" format="dimension" />
     </declare-styleable>
 </resources>
