@@ -12,14 +12,5 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        val videoRangeSlider = findViewById<VideoRangeSlider>(R.id.videoRangeSlider)
-        videoRangeSlider.setDataSource(Uri.parse(videoUri))
-        videoRangeSlider.setVideoCallback {
-            onVideoRangeChanged { startTime, endTime ->
-                startTime.log()
-                endTime.log()
-            }
-        }
     }
 }

@@ -10,4 +10,7 @@
         <attr name="previewHeight" format="dimension" />
         <attr name="previewMarginTop" format="dimension" />
     </declare-styleable>
+    <declare-styleable name="EditTextWithClear">
+        <attr name="clearIcon" format="reference" />
+    </declare-styleable>
 </resources>
