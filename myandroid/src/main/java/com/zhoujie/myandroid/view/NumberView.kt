@@ -21,9 +21,14 @@ class NumberView @JvmOverloads constructor(
 ) : View(context, attrs, defStyleAttr) {
 
     private var time = 0L
+    private var timeCallback: TimeCallback? = null
 
     init {
         isClickable = true
+    }
+
+    fun setTimeCallback(timeCallback: TimeCallback) {
+        this.timeCallback = timeCallback
     }
 
     private val bgPaint = Paint().apply {
@@ -112,11 +117,13 @@ class NumberView @JvmOverloads constructor(
                         in 0F..(measuredWidth / 2).toFloat() -> {
                             if (time >= 1000) {
                                 time -= 1000
+                                timeCallback?.onTimeChanged(time)
                                 invalidate()
                             }
                         }
                         in (measuredWidth / 2).toFloat()..measuredWidth.toFloat() -> {
                             time += 1000
+                            timeCallback?.onTimeChanged(time)
                             invalidate()
                         }
                     }
@@ -135,4 +142,8 @@ class NumberView @JvmOverloads constructor(
     }
 
     private fun Int.fpx() = this.px(context).toFloat()
+
+    interface TimeCallback {
+        fun onTimeChanged(time: Long)
+    }
 }

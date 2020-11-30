@@ -18,7 +18,7 @@ publish {
     userOrg = 'zjie7608'
     groupId = 'com.android.zhoujie'
     artifactId = 'library'
-    publishVersion = '1.0.5'
+    publishVersion = '1.0.6'
     desc = 'My Android Library'
     website = 'https://github.com/17314849295/MyAndroid'
 }
