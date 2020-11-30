@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-    <com.zhoujie.myandroid.view.EditTextWithClear
-        android:layout_width="match_parent"
-        app:clearIcon="@mipmap/ic_launcher"
-        android:layout_height="wrap_content" />
-</FrameLayout>
+    android:orientation="vertical">
+
+    <com.zhoujie.myandroid.view.NumberView
+        android:layout_width="114dp"
+        android:layout_height="38dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="24dp" />
+</LinearLayout>
